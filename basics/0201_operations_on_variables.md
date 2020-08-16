@@ -223,7 +223,7 @@ first_operand = first_operand ** second_operand
 
 ## Comparison Operations
 
-**[Comparison operations](https://en.wikipedia.org/wiki/Relational_operator)** or **Relational Operations** are carried out to check the **similarities** in Python object. These return **boolean** and are usually used in **If - Else** conditional loops.
+**[Comparison operations](https://en.wikipedia.org/wiki/Relational_operator)** or **Relational operations** are carried out to check the **similarities** in Python object. These return **boolean** and are usually used in **If - Else** conditional loops.
 
 Read more **[here](https://en.wikipedia.org/wiki/Relational_operator#Sameness_(object_identity)_vs._content_equality)**. This article will help you understand how, when and why to use **Comparison operations**.
 
