@@ -344,4 +344,4 @@ output = not first_operand  # output = 1 (This represents True)
 
 ## Identity - Membership Operations
 
-This operation is left out for self-exploration over **[here](https://www.tutorialspoint.com/python/identity_operators_example.htm)** and **[here](https://www.tutorialspoint.com/python/membership_operators_example.htm)**.
+These operations are left out for self-exploration over **[here](https://www.tutorialspoint.com/python/identity_operators_example.htm)** and **[here](https://www.tutorialspoint.com/python/membership_operators_example.htm)**.
