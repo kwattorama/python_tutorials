@@ -223,7 +223,7 @@ first_operand = first_operand ** second_operand
 
 ## Comparison Operations
 
-**[Comparison operations](https://en.wikipedia.org/wiki/Relational_operator)** or **Relational Operations** are carried out to check the **similarities** in Python object. These return **boolean** and are usually used in **If - Else** conditional loops.
+**[Comparison operations](https://en.wikipedia.org/wiki/Relational_operator)** or **Relational operations** are carried out to check the **similarities** in Python object. These return **boolean** and are usually used in **If - Else** conditional loops.
 
 Read more **[here](https://en.wikipedia.org/wiki/Relational_operator#Sameness_(object_identity)_vs._content_equality)**. This article will help you understand how, when and why to use **Comparison operations**.
 
@@ -344,4 +344,4 @@ output = not first_operand  # output = 1 (This represents True)
 
 ## Identity - Membership Operations
 
-This operation is left out for self-exploration over **[here](https://www.tutorialspoint.com/python/identity_operators_example.htm)** and **[here](https://www.tutorialspoint.com/python/membership_operators_example.htm)**.
+These operations are left out for self-exploration over **[here](https://www.tutorialspoint.com/python/identity_operators_example.htm)** and **[here](https://www.tutorialspoint.com/python/membership_operators_example.htm)**.
