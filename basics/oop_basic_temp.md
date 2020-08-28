@@ -253,7 +253,7 @@ class Audi2020(Audi):
 
 
 ```python
-class CellPhone(Telephone):
+class CellPhone(object):
   model_name = "xyz"
   interactivity = ["Touch", "Keypad"]
   manufacturer = "XA"
@@ -315,23 +315,28 @@ class SamsungGalaxyNote(CellPhone):
   processor = ("QC", "Exynos")
   bluetooth = True
 
-  def video_calling():
+  def video_calling(self, safe, camera):
     return calling() + recording()
 
-  def note_taking():
+  def note_taking(self):
     pass
 
-  def bixby():
+  def bixby(self):
     pass # AI
 
 
-class SamsungGalaxyNoteQC(SamsungGalaxyNote):
-  storage = 64
-  processor = "QC"
+bt_check = SamsungGalaxyNote()
+vdo = SamsungGalaxyNote()
+ai = SamsungGalaxyNote()
+
+SamsungGalaxyNote().stylus_supported
+SamsungGalaxyNote().bluetooth
+
+my_phone = SamsungGalaxyNote()
+SamsungGalaxyNote().video_calling(my_phone)
 
 
-class SamsungGalaxyNoteExynos(SamsungGalaxyNote):
-  storage = 16
-  processor = "Exynos"
+
+
 
 ```
