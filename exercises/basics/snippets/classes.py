@@ -16,17 +16,20 @@ class Employee(object):
     def leave(self):
         print("We're leaving...")
 
-
-class Grandparent:
-    skill = "Painting"
-    pass
+# Multilevel, Multiple, Hierarchical and Hybrid Inheritance
 
 
-class Parent(Grandparent):
-
-    def __init__(self):
-        print(Grandparent().skill)
+class God:  # Base Class
+    print("I'm God.")
 
 
-Parent()
-print(Parent().skill)
+class Father(God):  # Derived Class or Child Class
+    print("I'm Pappa.")
+
+
+class Mother(God):  # Derived Class or Child Class
+    print("I'm Mum.")
+
+
+class Child(Father, Mother):
+    print("I'm Child.")
