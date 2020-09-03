@@ -1,7 +1,5 @@
 # Object Oriented Programming
 
-# paradigm
-
 Types of **Paradigm** (notion/method/framework) of programming.
 
 - OOP - Python, C++, Java, VBS, JS
@@ -11,6 +9,10 @@ Types of **Paradigm** (notion/method/framework) of programming.
 
 - Functional (similar to OOP **BUT** with only functions and has nothing to do with **Classes**!!!!) - **Only Functions**! - Python, C, C++
   - Map, Filter and Reduce
+
+
+# collections
+
   
 ## OOP - Classes and Objects (Functions)
 
@@ -335,8 +337,12 @@ SamsungGalaxyNote().bluetooth
 my_phone = SamsungGalaxyNote()
 SamsungGalaxyNote().video_calling(my_phone)
 
-
-
-
-
 ```
+
+# Encapsulation
+
+pass
+
+# Polymorphism
+
+pass
