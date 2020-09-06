@@ -184,4 +184,8 @@ print(id(xa)) # This threw 139635360541896
 ## Tip
 
 For the sake of optimization, Python assigns lower memory addresses to values in range of **-5** to **256**.
-Try this by yourselves: `print(id(5), id(-2), id(100), id(256), id(257), id(1000))`
+Try this by yourselves -
+
+```python
+print(id(5), id(-2), id(100), id(256), id(257), id(1000))
+```
