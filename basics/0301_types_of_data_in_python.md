@@ -9,7 +9,7 @@ Based on the datatype we can classify an object to be either **Mutable** or **Im
 
 **Container** types like **list**, **dict** and **set** are all **mutable** objects whereas **Single** type are all **immutable** objects along one container type, **tuple**. So even though its a container **tuples** are **immutable**. So now we know which python objects are mutable and which aren't.
 
-But what the heck does these **"Mutable"** and **"Immutable"** means?!
+But what the heck does these "**Mutable**" and "**Immutable**" means?!
 
 **Note:** The descriptions of the Mutable and Immutable objects are intended for the **beginners** only.
 
@@ -28,7 +28,7 @@ Sequence means the way the elements in a container have been written or arranged
 xa = [1, "XA", 69.0, {"this is a set object nested in a list"}]
 ```
 
-Here, the created list has **[indexes](https://github.com/xames3/python_tutorials/blob/master/basics/0300_datatypes_in_python.md#lists-list)** starting with **0** where index position of integer **1** is **0**, index position of string object **"XA"** is **1** and so on. These indexes tell us that **"XA"** comes after **1** because of its index position and are hence in an increasing **Sequence**.
+Here, the created list has **[indexes](https://github.com/xames3/python_tutorials/blob/master/basics/0300_datatypes_in_python.md#lists-list)** starting with **0** where index position of integer **1** is **0**, index position of string object "**XA**" is **1** and so on. These indexes tell us that "**XA**" comes after **1** because of its index position and are hence in an increasing **Sequence**.
 
 So, *Mutable objects are those python objects whose sequences can be **altered** or **changed***...
 
@@ -44,11 +44,11 @@ xa = [1, "XA", 69.0, {"this is a set object nested in a list"}]
 xa = [1, "XAMES3", 69.0, {"this is a set object nested in a list"}]
 ```
 
-Here we somehow (we'll see this later) updated or modified the string object **"XA"** to **"XAMES3"**. What it means is we can **add** or **re-arrange** or **modify** or even **delete** the elements of a list (mutable objects) programmatically. The term **programmatically** signifies that the modifications or the updates have been done by the code after the object was created thus meaning **after creation**.
+Here we somehow (we'll see this later) updated or modified the string object "**XA**" to "**XAMES3**". What it means is we can **add** or **re-arrange** or **modify** or even **delete** the elements of a list (mutable objects) programmatically. The term **programmatically** signifies that the modifications or the updates have been done by the code after the object was created thus meaning **after creation**.
 
 Lists, Dictionaries and Sets are **Mutable** objects, meaning you can update or modify the elements from these containers.
 
-**Note:** The **"\[\]"** (square bracket) notation for accessing the elements has nothing to do with the Lists. We can access the values of a container using **"\[\]"** (square brackets) only!
+**Note:** The "**\[\]**" (square bracket) notation for accessing the elements has nothing to do with the Lists. We can access the values of a container using "**\[\]**" (square brackets) only!
 
 ### Mutability of a List
 
@@ -92,7 +92,7 @@ xa["age"] = "25 years 3 months"
 
 ### Mutability of a Set
 
-Sets behave differently when it comes to their mutability. Dictionary and List objects let user to modify the elements but Set **doesn't**! This is because they are an **unordered** collection of unique elements. If they don't have order (index) they can't be accessed using the above mentioned **"\[\]"** (square bracket) notation.
+Sets behave differently when it comes to their mutability. Dictionary and List objects let user to modify the elements but Set **doesn't**! This is because they are an **unordered** collection of unique elements. If they don't have order (index) they can't be accessed using the above mentioned "**\[\]**" (square bracket) notation.
 
 Since sets don't hold duplicates, but they're considered to be mutable objects meaning because python **updates** or **modifies** the written or created set object (with duplicates) to collection of unique elements (without duplicates). In simple terms python is deleting the duplicates in a set object internally thus sticking to the definition of Mutable object.
 
@@ -100,6 +100,6 @@ Since sets don't hold duplicates, but they're considered to be mutable objects m
 
 Immutable Objects are the one which do not let user to modify the elements of the container (**tuple** and **str**). Immutable objects include **str**, **tuple**, **bool**, etc.
 
-If you try to **access** the elements of an Immutable object you won't have any problems, **BUT** if you try to **update** the element using **"\[\]"** (square bracket) notation you'll get an **Error**!
+If you try to **access** the elements of an Immutable object you won't have any problems, **BUT** if you try to **update** the element using "**\[\]**" (square bracket) notation you'll get an **Error**!
 
 Try this yourself...
