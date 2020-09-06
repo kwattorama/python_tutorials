@@ -152,13 +152,13 @@ By definition, ***~~List~~** Tuple is an ordered collection of elements too but 
 # Empty tuple
 xa = ()
 
-# List with single element
+# Tuple with single element
 xa = ("Ashish",) # Comma is very important here
 
 # Tuple of all string elements
 xa = ("DOCUMENT SAVER", "CR07", "Game Player", "XA", "Shubham")
 
-# List of elements with different datatypes and duplicates
+# Tuple of elements with different datatypes and duplicates
 xa = (None, _, 1, "DragonBall Z", 42.0, tuple(), "DragonBall Z")
 ```
 
@@ -218,5 +218,5 @@ Here for the last example, we can see there are **duplicates**. By definition, w
 print(xa)
 
 # Output of last example
-{True, "Game Player", 42.0, "Daulat", 69, range(10)}
+{True, range(0, 10), 69, 42.0, 'Game Player', 'Daulat'}
 ```
