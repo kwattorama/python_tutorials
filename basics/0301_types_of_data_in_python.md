@@ -21,7 +21,7 @@ Now lets break it down into smaller digestable pieces.
 As stated above, *Mutable objects are those python objects whose **sequences***... **WAIT!**
 
 What are **sequences**?
-Sequence means the way the elements in a container have been written or arranged. 
+Sequence means the way the elements in a container have been written or arranged.
 
 ```python
 # List is a Container (mutable object)
