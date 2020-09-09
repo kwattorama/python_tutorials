@@ -19,29 +19,41 @@
 # # # Multilevel, Multiple, Hierarchical and Hybrid Inheritance
 
 
-# # class God:  # Base Class
-# #     print("I'm God.")
+# class Grandparent:  # Base Class
+#     print("I'm Grandparent.")
 
 
-# # class Father(God):  # Derived Class or Child Class
-# #     print("I'm Pappa.")
+# class Father(Grandparent):  # Derived Class or Child Class
+#     print("I'm Pappa.")
 
 
-# # class Mother(God):  # Derived Class or Child Class
-# #     print("I'm Mum.")
+# class Mother(Grandparent):  # Derived Class or Child Class
+#     print("I'm Mum.")
 
 
-# # class Child(Mother, Father):
-# #     print("I'm Child.")
+# class Child(Mother, Father):
+#     print("I'm Child.")
 
 
-# # class YoMama(object):
-# #     name = "XA"
-
-# #     def paint():
-# #         print("Painting...")
+# Child()
 
 
+
+# _var = "XA"
+
+# class YoMama:
+#     _var = "Shivam"
+
+#     def paint(self):
+#         print("Painting...")
+
+# class Shailesh:
+#     _var = "KWatt"
+
+
+# print(_var)
+# print(YoMama()._var)
+# print(Shailesh()._var)
 # # class DK(YoMama):
 # #     name = "Shailesh"
 # #     paint = "Acrylic"
@@ -78,13 +90,21 @@
 # PhoneBox().Phone.PhoneApp.call_xa()
 
 
+# POLYMORPHISM = POLY + MORPH
+
+
 # # To perform communication.
-# class Communicate(object):
-#     def talking(self, how_much, with_whom):
-#         print("Action of communicating..."
-#               f"with {with_whom} for {how_much} secs.")
+class Communicate(object):
+    def talk(self):
+        print("I'm talking")
+    # def talking(self, how_much, with_whom):
+    #     print("Action of communicating..."
+    #           f"with {with_whom} for {how_much} secs.")
 
-
+# x = ["x"]
+# a = ["a"]
+# xa = x + a
+# print(xa)
 
 #     # Communicate().talking()
 
@@ -94,28 +114,37 @@
 #     #     print("XA roxxx...")
 
 
-# class Dog(Communicate):
-#     def talking(self):
-#         print("I'm barking...")
-#     # print("Dog will start barking... woof woof")
+class Dog(Communicate):
+
+    # _talk = Communicate().talk()
+
+    def talk(self):
+        print("I'm barking...")
+
+
+
+
+# Dog().talk()
+
+    # print("Dog will start barking... woof woof")
 
 
 # class Cat(Communicate):
 #     print("Cat will start meowing... meow meow")
 
 
-# # from abc import ABC, abstractmethod
+from abc import ABC, abstractmethod
 
 
-# # # Abstract Base Class
-# # class XA(ABC):
+# Abstract Base Class
+class XA(ABC):
 
-# #     # @abstractmethod
-# #     def some_work(self):
-# #         pass
+    @abstractmethod
+    def some_work(self):
+        pass
 
 
-# # x = XA().some_work()
+x = XA().some_work()
 
 
 # # x = 1
@@ -147,11 +176,11 @@
 #     def something(self):
 #         pass
 
-def decodeco(fnc):
-    def normal():
-        fnc()
-        return 25
-    return normal   
+# def decodeco(fnc):
+#     def normal():
+#         fnc()
+#         return 25
+#     return normal   
 
 
 
@@ -177,11 +206,11 @@ def decodeco(fnc):
 #     print("XA")
 
 
-def decodeco(fnc):
-    def normal():
-        print("Normal is running now...")
-        fnc()
-    return normal
+# def decodeco(fnc):
+#     def normal():
+#         print("Normal is running now...")
+#         fnc()
+#     return normal
 
 
 # @decodeco
@@ -194,7 +223,7 @@ def decodeco(fnc):
 # @decodeco
 
 
-x = xa = {"xa", "XA", "daulat", 420, 89.0, 2.03}
-for i in x:
-    print(i)
+# x = xa = {"xa", "XA", "daulat", 420, 89.0, 2.03}
+# for i in x:
+#     print(i)
 # {'XA', 2.03, 420, 'xa', 'daulat', 89.0}
