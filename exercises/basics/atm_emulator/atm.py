@@ -19,7 +19,32 @@
 
 import time
 import random
-from users import users
+from users import users # pyright: reportMissingImports=false
+
+
+def display(options):
+    for idx, option in enumerate(options, start=1):
+        print(f"{idx}. {option}")
+
+
+def load_msg(processing, msg, interval=1.0):
+    print(f"\n{processing}")
+    time.sleep(interval)
+    print(msg)
+
+
+def _input(msg):
+    return int(input(msg))
+
+
+_RECIEPT = ("|------------------------|\n"
+            "|                        |\n"
+            "|                        |\n"
+            "| RECEIPT OF TRANSACTION |\n"
+            "|                        |\n"
+            "|                        |\n"
+            "|========================|\n"
+            "|------------------------|")
 
 print("\nWELCOME TO THE GOTHAM CITY STATE BANK ATM NETWORK\n\n")
 ins = input("Please press 'I' to insert your card for service >>> ")
@@ -27,8 +52,7 @@ ins = input("Please press 'I' to insert your card for service >>> ")
 if ins == "I" or ins == "i":
     print()
     languages = ["English", "Hindi"]
-    for lang_idx, language in enumerate(languages, start=1):
-        print(f"{lang_idx}. {language}")
+    display(languages)
 
     lang_inp = input("Please select your preferred language >>> ")
     if lang_inp == "2":
@@ -40,7 +64,7 @@ if ins == "I" or ins == "i":
 
     while attempt <= 3:
         time.sleep(1.5)
-        user_pin = int(input("Please enter your 4 digit ATM Pin >>> "))
+        user_pin = _input("Please enter your 4 digit ATM Pin >>> ")
 
         if user_pin in users:
             first_name = users[user_pin]["first_name"]
@@ -48,46 +72,38 @@ if ins == "I" or ins == "i":
             account_no = users[user_pin]["account_no"]
             balance = users[user_pin]["balance"]
             currency = users[user_pin]["currency"]
-            print("\nProcessing...")
-            time.sleep(1.2)
-            print(f"\nHello {first_name} {last_name[0]}.\n"
-                  "What would you like to do?")
+
+            load_msg("Processing...",
+                           f"\nHello {first_name} {last_name[0]}.\n"
+                           "What would you like to do?\n", 1.2)
 
             options = ["Withdraw", "Change Pin", "Check Balance"]
-            for opt_idx, option in enumerate(options, start=1):
-                print(f"{opt_idx}. {option}")
+            display(options)
 
-            opt_inp = int(input("Please select from the above options "
-                                ">>> "))
+            opt_inp = _input("Please select from the above options >>> ")
 
             while True:
                 if opt_inp in [1, 2, 3]:
-                    if opt_inp == 3:
-                        print("\nPlease wait...")
-                        time.sleep(1.0)
-                        print("We are fetching your account details...")
+                    if opt_inp == 4:
+                        load_msg("Please wait...",
+                                 "We are fetching your account details...")
                         time.sleep(2.0)
-                        print("Your account balance is "
-                                f"{currency}{balance}.")
+                        print(f"Your account balance is {currency}{balance}.")
                     elif opt_inp == 1:
                         print("\nPlease wait...")
                         time.sleep(1.0)
 
                         wdw_options = ["Savings Account", "Current Account"]
-                        for wdw_idx, wdw_option in enumerate(wdw_options,
-                                                             start=1):
-                            print(f"{wdw_idx}. {wdw_option}")
+                        display(wdw_options)
 
-                        wdw_opt = int(input("\nChoose account >>> "))
+                        wdw_opt = _input("\nChoose account >>> ")
                         if wdw_opt == 2:
-                            print("\nProcessing...")
-                            time.sleep(1.2)
-                            print("You are not allowed to dispense from "
-                                  "your Current Account.")
+                            load_msg("Processing...",
+                                    ("You are not allowed to dispense from "
+                                     "your Current Account."), 1.2)
                             break
                         elif wdw_opt == 1:
-                            wdw_inp = int(input("Please enter the amount "
-                                                ">>> $"))
+                            wdw_inp = _input("Please enter the amount >>> $")
 
                             if wdw_inp > balance:
                                 print("Cannot withdraw amount greater than "
@@ -95,54 +111,35 @@ if ins == "I" or ins == "i":
                             elif wdw_inp > 30000:
                                 otp = random.randint(111111, 999999)
                                 print(f"\nHINT: {otp}\n")
-                                otp_inp = int(input("An OTP is sent to your "
-                                                    "phone XXX-XXX-1234. "
-                                                    "Please enter the OTP to "
-                                                    "proceed with your "
-                                                    "transaction >>> "))
+                                otp_inp = _input("An OTP is sent to your "
+                                                 "phone XXX-XXX-1234. "
+                                                 "Please enter the OTP to "
+                                                 "proceed with your "
+                                                 "transaction >>> ")
                                 if otp == otp_inp:
                                     balance -= wdw_inp
-                                    print("\nProcessing...\n")
-                                    time.sleep(2.0)
-                                    print("Please collect your cash...")
+                                    load_msg("Processing...\n",
+                                             "Please collect your cash...",
+                                             2.0)
                                     print("Your account balance is "
                                           f"{currency}{balance}")
                                     receipt = input("Press 'Y' for printing "
                                                     "transaction receipt >>> ")
                                     if receipt == 'Y':
-                                        print("Printing...\n")
-                                        time.sleep(1.0)
-                                        print("|------------------------|\n"
-                                              "|                        |\n"
-                                              "|                        |\n"
-                                              "| RECEIPT OF TRANSACTION |\n"
-                                              "|                        |\n"
-                                              "|                        |\n"
-                                              "|========================|\n"
-                                              "|------------------------|")
+                                        load_msg("Printing...\n", _RECIEPT)
                                     users[user_pin]["balance"] = balance
                                 else:
                                     print("Invalid OTP!")
                             else:
                                 balance -= wdw_inp
-                                print("\nProcessing...\n")
-                                time.sleep(2.0)
-                                print("Please collect your cash!")
+                                load_msg("Processing...\n",
+                                         "Please collect your cash...", 2.0)
                                 print("Your account balance is "
-                                        f"{currency}{balance}")
+                                      f"{currency}{balance}")
                                 receipt = input("Press 'Y' for printing "
                                                 "transaction receipt >>> ")
-                                if receipt == 'Y':
-                                    print("Printing...\n")
-                                    time.sleep(1.0)
-                                    print("|------------------------|\n"
-                                          "|                        |\n"
-                                          "|                        |\n"
-                                          "| RECEIPT OF TRANSACTION |\n"
-                                          "|                        |\n"
-                                          "|                        |\n"
-                                          "|========================|\n"
-                                          "|------------------------|")
+                                if receipt == "Y":
+                                    load_msg("Printing...\n", _RECIEPT)
                                 users[user_pin]["balance"] = balance
                         else:
                             print("Invalid input!")
@@ -153,15 +150,14 @@ if ins == "I" or ins == "i":
                         curr_pin = int(input("\nPlease enter your 4 digit ATM "
                                              "Pin >>> "))
                         if curr_pin in users:
-                            new_pin = int(input("Please enter your new 4 "
-                                                "digit ATM Pin >>> "))
+                            new_pin = _input("Please enter your new 4 "
+                                             "digit ATM Pin >>> ")
                             if len(str(new_pin)) == 4:
                                 temp = users[curr_pin]
                                 del users[curr_pin]
                                 users[new_pin] = temp
-                                print("\nUpdating...")
-                                time.sleep(2.0)
-                                print("ATM Pin successfully updated!")
+                                load_msg("Updating...",
+                                         "ATM Pin successfully updated!", 2.0)
                             else:
                                 print("Invalid pin!")
                             break
@@ -171,10 +167,9 @@ if ins == "I" or ins == "i":
                 else:
                     print("Please select a valid option!")
             time.sleep(1.0)
-            print("\nPlease remove your card!")
-            time.sleep(3.0)
-            print("Thanks for visiting GOTHAM CITY STATE BANK ATM NETWORK..."
-                  "Have a good day!")
+            load_msg("Please remove your card!", 
+                     ("Thanks for visiting GOTHAM CITY STATE BANK ATM "
+                      "NETWORK... Have a good day!"), 3.0)
             break
         else:
             attempt += 1
