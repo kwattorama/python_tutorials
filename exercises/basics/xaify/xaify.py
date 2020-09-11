@@ -14,13 +14,24 @@
 import os
 import time
 
+# Notification to display the ETA.
+# --------------------------------
+# Shailesh:
+# If we make hour = 0 as a counter and increment with every while loop then we
+# can count the hour wrt opening time of laptop.
 
-def show_toast(title, message):
+# Pranali:
+# Time delta (difference/subtraction)
+
+
+def show_toast(title: str, message: str, minutes: float) -> None:
+    """Displays notification in timely manner."""
     title = title.replace("'", "")
     message = message.replace("'", "")
+    time.sleep(minutes * 60.0)
     os.system(f"notify-send '{title}' '{message}'")
 
 
 while True:
-    show_toast("Drink Water", "Please gtfo and drink some water!!!")
-    # time.sleep(3.0)
+    show_toast("Take a break", "Get out from my sight!!!", 0.1)
+    # show_toast("Drink Water", "Please gtfo and drink some water!!!", 0.1)
