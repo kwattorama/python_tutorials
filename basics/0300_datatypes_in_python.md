@@ -120,7 +120,8 @@ Lists are probably one of the most used and simplest datatype (data-structure) i
 
 Technically, a "*List is an **ordered** collection of elements.*"
 
-But what does **ordered** means? Ordered means having **index** and retaining the **order** of creation in layman terms.<br>Lists have [**indexes**](https://en.wikipedia.org/wiki/Index_notation#In_computing) or **index notations**. Hence, we can access elements of a list using its **index** position. In python, like most of the programming languages the index starts with **zero**.
+But what does **ordered** means? Ordered means having **index** and retaining the **order** of creation in layman terms.
+Lists have [**indexes**](https://en.wikipedia.org/wiki/Index_notation#In_computing) or **index notations**. Hence, we can access elements of a list using its **index** position. In python, like most of the programming languages the index starts with **zero**.
 
 Lists are usually written with **"\[\]"** (square brackets) in python.
 
@@ -138,7 +139,7 @@ xa = ["Shailesh", "Mini", "Shivam", "Sagar", "Pranali"]
 xa = [1, True, 4.0, 5, "6", None, _, 4.0, "Karnik", None]
 ```
 
-Lists can hold virtually any valid python object and need not to be homogeneous (same elements). There are **no restrictions** on having number of elements in a list but lists are always **definite**! Meaning all the elements in the **"\[ \]"** (square brackets) seperated by **","** (commas) will be part of the list. There can be an empty list (zero elements), there can be list with only one element or there could be multiple elements. 
+Lists can hold virtually any valid python object and need not to be homogeneous (same elements). There are **no restrictions** on having number of elements in a list but lists are always **definite**! Meaning all the elements in the **"\[ \]"** (square brackets) seperated by **","** (commas) will be part of the list. There can be an empty list (zero elements), there can be list with only one element or there could be multiple elements.
 
 A list could nest another list too.
 
@@ -152,19 +153,19 @@ By definition, ***~~List~~** Tuple is an ordered collection of elements too but 
 # Empty tuple
 xa = ()
 
-# List with single element
+# Tuple with single element
 xa = ("Ashish",) # Comma is very important here
 
 # Tuple of all string elements
 xa = ("DOCUMENT SAVER", "CR07", "Game Player", "XA", "Shubham")
 
-# List of elements with different datatypes and duplicates
+# Tuple of elements with different datatypes and duplicates
 xa = (None, _, 1, "DragonBall Z", 42.0, tuple(), "DragonBall Z")
 ```
 
 Tuple can also hold virtually any valid python object and need not to be homogeneous (same elements). Similarly, there are **no restrictions** on having number of elements in a tuple and are **definite** too. There can be an empty tuple (zero elements), there can be list with only one element (intermediate level stuff) or there could be multiple elements. A tuple could nest another tuple too just like a list.
 
-**Note:** Tuples are **faster** than a list in terms of program execution. 
+**Note:** Tuples are **faster** than a list in terms of program execution.
 
 #### Dictionary (dict)
 
@@ -218,5 +219,5 @@ Here for the last example, we can see there are **duplicates**. By definition, w
 print(xa)
 
 # Output of last example
-{True, "Game Player", 42.0, "Daulat", 69, range(10)}
+{True, range(0, 10), 69, 42.0, 'Game Player', 'Daulat'}
 ```

@@ -33,9 +33,9 @@
         "**/*.egg-info": true,
     },
     "git.autofetch": true,
-    "python.pythonPath": "/mnt/hdd/development/universe/env/bin/python",
-    "python.linting.pylintEnabled": false,
-    "python.linting.pycodestyleEnabled": true,
+    "python.pythonPath": "/mnt/storage/development/environments/beta/bin/python3",
+    "python.linting.pylintEnabled": true,
+    "python.linting.pycodestyleEnabled": false,
     "python.linting.enabled": true,
     "python.formatting.provider": "autopep8",
     "python.linting.pylintArgs": [

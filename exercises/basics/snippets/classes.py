@@ -1,33 +1,33 @@
-"""Classes in Python"""
+# """Classes in Python"""
 
 
-# class Employee(object):
-#     _id = "IN6969"
-#     name = "XA"
-#     employer = "Google"
-#     location = "Mumbai"
+# # class Employee(object):
+# #     _id = "IN6969"
+# #     name = "XA"
+# #     employer = "Google"
+# #     location = "Mumbai"
 
-#     def eat(self):
-#         print("We're eating...")
+# #     def eat(self):
+# #         print("We're eating...")
 
-#     def talk(self):
-#         print("We're talking...")
+# #     def talk(self):
+# #         print("We're talking...")
 
-#     def leave(self):
-#         print("We're leaving...")
+# #     def leave(self):
+# #         print("We're leaving...")
 
-# # Multilevel, Multiple, Hierarchical and Hybrid Inheritance
-
-
-# class God:  # Base Class
-#     print("I'm God.")
+# # # Multilevel, Multiple, Hierarchical and Hybrid Inheritance
 
 
-# class Father(God):  # Derived Class or Child Class
+# class Grandparent:  # Base Class
+#     print("I'm Grandparent.")
+
+
+# class Father(Grandparent):  # Derived Class or Child Class
 #     print("I'm Pappa.")
 
 
-# class Mother(God):  # Derived Class or Child Class
+# class Mother(Grandparent):  # Derived Class or Child Class
 #     print("I'm Mum.")
 
 
@@ -35,81 +35,195 @@
 #     print("I'm Child.")
 
 
-# class YoMama(object):
-#     name = "XA"
+# Child()
 
-#     def paint():
+
+
+# _var = "XA"
+
+# class YoMama:
+#     _var = "Shivam"
+
+#     def paint(self):
 #         print("Painting...")
 
-
-# class DK(YoMama):
-#     name = "Shailesh"
-#     paint = "Acrylic"
-
-#     print(YoMama.paint())
+# class Shailesh:
+#     _var = "KWatt"
 
 
-# DK()
+# print(_var)
+# print(YoMama()._var)
+# print(Shailesh()._var)
+# # class DK(YoMama):
+# #     name = "Shailesh"
+# #     paint = "Acrylic"
 
-# class Grandparent(object):
-#     skill = "Painting"
+# #     print(YoMama.paint())
 
 
-# class Parent(Grandparent):
-#     print(Grandparent.skill)
+# # DK()
 
-class PhoneBox(object):
-    obj_1 = "Phone"
-    obj_2 = "Charger"
-    obj_3 = "Charging Cord"
-    obj_4 = "Paperwork"
+# # class Grandparent(object):
+# #     skill = "Painting"
 
-    class Phone():
-        obj_1 = "Gallery"
-        obj_2 = "Phone"
-        obj_3 = "Settings"
 
-        class PhoneApp():
+# # class Parent(Grandparent):
+# #     print(Grandparent.skill)
 
-            def call_xa():
-                print("Calling God...")
+# class PhoneBox(object):
+#     obj_1 = "Phone"
+#     obj_2 = "Charger"
+#     obj_3 = "Charging Cord"
+#     obj_4 = "Paperwork"
+
+#     class Phone():
+#         obj_1 = "Gallery"
+#         obj_2 = "Phone"
+#         obj_3 = "Settings"
+
+#         class PhoneApp():
+
+#             def call_xa():
+#                 print("Calling God...")
 
 
 # PhoneBox().Phone.PhoneApp.call_xa()
 
-# To perform communication.
+
+# POLYMORPHISM = POLY + MORPH
+
+
+# # To perform communication.
 class Communicate(object):
-    def timepass(self, how_much, with_whom):
-        print("Action of communicating..."
-              f"with {with_whom} for {how_much} secs.")
+    def talk(self):
+        print("I'm talking")
+    # def talking(self, how_much, with_whom):
+    #     print("Action of communicating..."
+    #           f"with {with_whom} for {how_much} secs.")
+
+# x = ["x"]
+# a = ["a"]
+# xa = x + a
+# print(xa)
+
+#     # Communicate().talking()
+
+#     # def talking(self):
+#     #     print(1 + 1)
+#     #     print("Hello babe")
+#     #     print("XA roxxx...")
 
 
-class Human(Communicate):
-    def timepass(self):
-        Communicate.timepass(self, 86400, "CP")
-    # Communicate().timepass()
+class Dog(Communicate):
 
-    def timepass(self):
-        print(1 + 1)
-        print("Hello babe")
-        print("XA roxxx...")
+    # _talk = Communicate().talk()
+
+    def talk(self):
+        print("I'm barking...")
 
 
-Human().timepass()
 
 
-# class Dog(Communicate):
-#     print("Dog will start barking... woof woof")
+# Dog().talk()
+
+    # print("Dog will start barking... woof woof")
 
 
 # class Cat(Communicate):
 #     print("Cat will start meowing... meow meow")
 
 
-# x = ["XA"]
-# a = ["XA"]
+from abc import ABC, abstractmethod
 
-# xa = x + a
 
-# Operator Overloading...
-# Functional Overloading...
+# Abstract Base Class
+class XA(ABC):
+
+    @abstractmethod
+    def some_work(self):
+        pass
+
+
+x = XA().some_work()
+
+
+# # x = 1
+# # a = "2"
+
+# # xa = x * a
+# # print(xa)
+
+# # # Operator Overloading...
+# # # Functional Overloading..
+
+# class Human(Communicate):
+#     # Communicate().talking(86400, "SP")
+
+#     def talking(self):
+#         print("I'm dancing...")
+
+
+# Human().talking()
+
+# class ActionTeachHowToCode(Actions):
+
+#     def __name__(self):
+#         return repr(class.__init__.name() at id)
+
+#     def __name__(self):
+#         return "teaching_how_to_code"
+
+#     def something(self):
+#         pass
+
+# def decodeco(fnc):
+#     def normal():
+#         fnc()
+#         return 25
+#     return normal   
+
+
+
+# def normal():
+#     xa = 10
+#     return xa
+#     print("XA")
+
+
+# def nimesh():
+#     xa = 10
+#     yield xa
+#     xa += 1 # xa = xa + 1
+#     yield xa
+
+
+# for x in nimesh():
+#     print(x)
+
+
+# @decodeco
+# def rdn():
+#     print("XA")
+
+
+# def decodeco(fnc):
+#     def normal():
+#         print("Normal is running now...")
+#         fnc()
+#     return normal
+
+
+# @decodeco
+# def tryout():
+#     print("I'm tryout function")
+
+
+# x = decodeco(tryout)
+# x()
+# @decodeco
+
+
+# x = xa = {"xa", "XA", "daulat", 420, 89.0, 2.03}
+# for i in x:
+#     print(i)
+# {'XA', 2.03, 420, 'xa', 'daulat', 89.0}
